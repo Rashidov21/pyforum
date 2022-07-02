@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/default.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -14,14 +15,14 @@
         <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Tenth navbar example">
             <div class="container-fluid">
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <i class="fas fa-bars"></i>
               </button>
         
               <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link active navbar-brand fw-bold" aria-current="page" href="#">
-                        devbook
+                    <a class="nav-link" aria-current="page" href="#">
+                        <img  src="./src/logo.png" alt="">
                     </a>
                   </li>
                   <li class="nav-item">
@@ -30,7 +31,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                    <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">
                         Kitoblar
                     </a>
                   </li>
@@ -39,12 +40,12 @@
                     data-bs-toggle="dropdown" aria-expanded="false">
                     Turkumlar
                 </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdown08">
-                      <li><a class="dropdown-item" href="#">Umumiy dasturlash</a></li>
-                      <li><a class="dropdown-item" href="#">Javascript</a></li>
-                      <li><a class="dropdown-item" href="#">Python</a></li>
-                      <li><a class="dropdown-item" href="#">C++</a></li>
-                      <li><a class="dropdown-item" href="#">Veb dasturlash</a></li>
+                    <ul class="dropdown-menu bg-dark" aria-labelledby="dropdown08">
+                      <li><a class="dropdown-item text-white" href="#">Umumiy dasturlash</a></li>
+                      <li><a class="dropdown-item text-white" href="#">Javascript</a></li>
+                      <li><a class="dropdown-item text-white" href="#">Python</a></li>
+                      <li><a class="dropdown-item text-white" href="#">C++</a></li>
+                      <li><a class="dropdown-item text-white" href="#">Veb dasturlash</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -52,6 +53,25 @@
             </div>
           </nav>
     </header>
+    <main>
+        <div class="container my-1">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+              <div class="col-lg-7 p-3 p-lg-5 pt-lg-3 order-1 order-md-0">
+                <h1 class="display-4 fw-bold lh-base dark-text">JavaScript haqida ajoyib kitob</h1>
+                <p class="lead dark-text">
+                    Kitobda Javascript dasturlashning zamonaviy tomonlari ko'rib chiqiladi . Agar siz oldindan JavaScript dasturlash tilini bilsangiz ham yoki endigina o'rganmoqchi bo'lsangiz ham bu kitob siz uchun mos kelaveradi.
+                </p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                  <button type="button" class="btn dark btn-md text-white px-4 me-md-2 fw-bold">Yuklab olish</button>
+                  <button type="button" class="btn yellow btn-md px-4">Batafsil</button>
+                </div>
+              </div>
+              <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden text-center order-0 order-md-1">
+                  <img class="rounded-lg-3 banner-image" src="./src/js.jpg" alt="" >
+              </div>
+            </div>
+          </div>
+    </main>
     <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

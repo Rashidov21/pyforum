@@ -1,8 +1,57 @@
 :root {
     --dev-dark: #404143;
     --dev-yellow: #FFD600;
+    --text-dark-color: #404143;
 }
 
 * {
     font-family: "Poppins", sans-serif;
+}
+
+/* COLORS  */
+.dark {
+    background-color: var(--dev-dark);
+}
+
+.dark-text {
+    color: var(--text-dark-color);
+}
+
+.yellow {
+    background-color: var(--dev-yellow);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+button.navbar-toggler {
+    outline: none !important;
+    border: none !important;
+}
+
+.dropdown-item:hover {
+    background-color: #555 !important;
+}
+
+/* BANNER  */
+.banner-image {
+    width: 450px;
+    max-width: 100%;
 }
