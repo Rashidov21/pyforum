@@ -1,0 +1,8 @@
+:root {
+    --dev-dark: #404143;
+    --dev-yellow: #FFD600;
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+}
