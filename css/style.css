@@ -1,3 +1,51 @@
 nav {
     background-color: var(--dev-dark) !important;
 }
+
+.card-cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.product-device {
+    position: absolute;
+    right: 10%;
+    bottom: -30%;
+    width: 300px;
+    height: 540px;
+    background-color: #333;
+    border-radius: 21px;
+    transform: rotate(30deg);
+}
+
+.product-device::before {
+    position: absolute;
+    top: 10%;
+    right: 10px;
+    bottom: 10%;
+    left: 10px;
+    content: "";
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 5px;
+}
+
+.product-device-2 {
+    top: -25%;
+    right: auto;
+    bottom: 0;
+    left: 7%;
+    background-color: #333;
+}
+
+.product-image {
+    position: absolute;
+    width: 80%;
+    top: 10%;
+    right: 10%;
+}
+
+.product-card {
+    width: 100%;
+    max-height: 200px;
+}
