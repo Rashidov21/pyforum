@@ -22,14 +22,14 @@
     --bs-gray-700: #495057;
     --bs-gray-800: #343a40;
     --bs-gray-900: #212529;
-    --bs-primary: #664EFE;
+    --bs-primary: #664EFE !important;
     --bs-secondary: #6c757d;
-    --bs-success: #01AC6A;
-    --bs-info: #C084FC;
-    --bs-warning: #FDE047;
-    --bs-danger: #D3723C;
-    --bs-light: #f8f9fa;
-    --bs-dark: #1C1917;
+    --bs-success: #01AC6A !important;
+    --bs-info: #C084FC !important;
+    --bs-warning: #FDE047 !important;
+    --bs-danger: #D3723C !important;
+    --bs-light: #f8f9fa !important;
+    --bs-dark: #241f1c !important;
     --bs-primary-rgb: 13, 110, 253;
     --bs-secondary-rgb: 108, 117, 125;
     --bs-success-rgb: 25, 135, 84;
@@ -65,4 +65,8 @@
     --bs-link-hover-color: #0a58ca;
     --bs-code-color: #d63384;
     --bs-highlight-bg: #fff3cd;
+}
+
+* {
+    font-family: "Poppins", sans-serif !important;
 }
