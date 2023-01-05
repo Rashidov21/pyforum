@@ -3,10 +3,10 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<section class="mt-5">
+<section>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
+        <div class="grid">
+            <div>
                 <h3>Login form</h3>
                 <form action="" method="POST" class="form">
                     {{form|crispy}}
@@ -15,10 +15,11 @@
                     <input type="submit" class="btn btn-outline-warning">
                 </form>
             </div>
-            <div class="col-sm-12 col-md-6">
+            <div>
                 <img src="{% static 'src/Login.png' %}" alt="" class="img-fluid w-75">
             </div>
         </div>
+
     </div>
 </section>
 {% endblock %}
