@@ -1,10 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from django.contrib.auth import login, authenticate
 from django.views.generic import DetailView, TemplateView
 from django.views.generic.edit import UpdateView
 # from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import Group
 from django.contrib import messages
+from django.conf import settings
 from .models import User
 # Create your views here.
 from .forms import SimpleUserCreationForm
@@ -29,14 +31,16 @@ def register(request):
         if form.is_valid():
             u = form.save()
             try:
-                group = Group.objects.get("default_user")
+                group = Group.objects.get(name="default_user")
                 group.user_set.add(u)
             except Exception as er:
                 # raise
                 print(er)
             print("OK")
+            authenticate(u)
             message = "Successfully !"
             messages.add_message(request, messages.SUCCESS, message)
+            return redirect("/")
         else:
             message = "Error !"
             messages.add_message(request, messages.ERROR, message)

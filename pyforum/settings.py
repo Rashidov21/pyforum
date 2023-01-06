@@ -120,6 +120,10 @@ USE_TZ = True
 
 AUTH_USER_MODEL = "accounts.User"
 
+LOGIN_URL = "accounts/login"
+LOGOUT_URL = "accounts/logout"
+LOGIN_REDIRECT_URL = "accounts/profile"
+
 # QUILL_CONFIGS = {
 #     'default': {
 #         'theme': 'snow',
