@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'forum',
     'accounts',
-    "crispy_forms"
+    # "crispy_forms",
+    'django_quill',
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -117,6 +119,27 @@ USE_I18N = True
 USE_TZ = True
 
 AUTH_USER_MODEL = "accounts.User"
+
+# QUILL_CONFIGS = {
+#     'default': {
+#         'theme': 'snow',
+#         'modules': {
+#             'syntax': True,
+#             'toolbar': [
+#                 [
+#                     {'font': []},
+#                     {'header': []},
+#                     {'align': []},
+#                     'bold', 'italic', 'underline', 'strike', 'blockquote',
+#                     {'color': []},
+#                     {'background': []},
+#                 ],
+#                 ['code-block', 'link'],
+#                 ['clean'],
+#             ]
+#         }
+#     }
+# }
 
 
 # Static files (CSS, JavaScript, Images)

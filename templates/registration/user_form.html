@@ -1,0 +1,34 @@
+{% extends '../wrapper.html' %}
+{% load static %}
+{% block content %}
+<!-- title  -->
+{% block title %}
+<title>
+    Profile -
+    {% if request.user.first_name %}
+    {{request.user.first_name}}
+    {% else %}
+    {{request.user.username}}
+    {% endif %}
+</title>
+{% endblock title %}
+<section>
+    <div class="container">
+        <div class="grid">
+
+            <div>
+                <article>
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {{form}}
+                        {% csrf_token %}
+                        <input type="submit" value="" role="button">
+                    </form>
+                </article>
+            </div>
+            <div>
+                <img src="{% static 'src/Login.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
