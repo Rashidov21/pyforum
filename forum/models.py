@@ -1,5 +1,6 @@
 from django.db import models
 from accounts.models import User
+from django.template.defaultfilters import slugify
 # Create your models here.
 
 from django_quill.fields import QuillField
@@ -31,12 +32,16 @@ class Topic(models.Model):
     top = models.BooleanField(default=False)
     category = models.ForeignKey(
         Category, on_delete=models.PROTECT, related_name='category')
-    tag = models.ForeignKey(
-        Tag, on_delete=models.PROTECT, related_name='tag')
+    tag = models.ManyToManyField(Tag, related_name='tag')
     published = models.DateTimeField(auto_now_add=True)
     views = models.PositiveIntegerField(default=0)
     author = models.ForeignKey(
         User, on_delete=models.PROTECT, related_name='topics')
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super(Topic, self).save(*args, **kwargs)
 
     def __str__(self):
         return str(self.title)

@@ -1,0 +1,29 @@
+{% extends '../wrapper.html' %}
+{% load static %}
+{% block content %}
+{{form.media}}
+<!-- title  -->
+{% block title %}
+<title>
+    Add new topic -
+    {% if request.user.first_name %}
+    {{request.user.first_name}}
+    {% else %}
+    {{request.user.username}}
+    {% endif %}
+</title>
+{% endblock title %}
+<br><br>
+<section>
+    <div class="container">
+        <div class="grid">
+            <form action="" method="post">
+                {{form}}
+                {% csrf_token %}
+                <input type="submit" value="Add" role="button">
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

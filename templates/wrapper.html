@@ -27,21 +27,24 @@
                         <ion-icon size="large" name="search-outline"></ion-icon>
                     </a>
                 </li>
+                {% if request.user.is_authenticated %}
                 <li>
-                    <a href="#">
+                    <a href="{% url 'accounts:profile' %}">
                         <ion-icon size="large" name="person-outline"></ion-icon>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <ion-icon size="large" name="log-in-outline"></ion-icon>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
+                    <a href="{% url 'accounts:logout' %}">
                         <ion-icon size="large" name="log-out-outline"></ion-icon>
                     </a>
                 </li>
+                {% else %}
+                <li>
+                    <a href="{% url 'accounts:login' %}">
+                        <ion-icon size="large" name="log-in-outline"></ion-icon>
+                    </a>
+                </li>
+                {% endif %}
 
                 <li>
                     <a href="#" onclick="themeSwitch(this)">

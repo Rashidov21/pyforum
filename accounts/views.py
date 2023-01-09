@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth import login, authenticate
 from django.views.generic import DetailView, TemplateView
 from django.views.generic.edit import UpdateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 # from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import Group
 from django.contrib import messages
@@ -12,7 +13,7 @@ from .models import User
 from .forms import SimpleUserCreationForm
 
 
-class ProfileView(TemplateView):
+class ProfileView(LoginRequiredMixin, TemplateView):
     template_name = 'registration/profile.html'
 
 

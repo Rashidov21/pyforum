@@ -5,5 +5,6 @@ app_name = 'forum'
 
 
 urlpatterns = [
-    path('', views.HomePageView.as_view(), name='home')
+    path('', views.HomePageView.as_view(), name='home'),
+    path('add/', views.AddNewTopicView.as_view(), name='add_topic')
 ]

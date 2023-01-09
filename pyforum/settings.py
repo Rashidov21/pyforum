@@ -120,30 +120,30 @@ USE_TZ = True
 
 AUTH_USER_MODEL = "accounts.User"
 
-LOGIN_URL = "accounts/login"
-LOGOUT_URL = "accounts/logout"
-LOGIN_REDIRECT_URL = "accounts/profile"
+LOGIN_URL = "/accounts/login/"
+LOGOUT_URL = "/accounts/logout/"
+LOGIN_REDIRECT_URL = "/accounts/profile/"
 
-# QUILL_CONFIGS = {
-#     'default': {
-#         'theme': 'snow',
-#         'modules': {
-#             'syntax': True,
-#             'toolbar': [
-#                 [
-#                     {'font': []},
-#                     {'header': []},
-#                     {'align': []},
-#                     'bold', 'italic', 'underline', 'strike', 'blockquote',
-#                     {'color': []},
-#                     {'background': []},
-#                 ],
-#                 ['code-block', 'link'],
-#                 ['clean'],
-#             ]
-#         }
-#     }
-# }
+QUILL_CONFIGS = {
+    'default': {
+        'theme': 'snow',
+        'modules': {
+            'syntax': True,
+            'toolbar': [
+                [
+                    {'font': []},
+                    {'header': []},
+                    {'align': []},
+                    'bold', 'italic', 'underline', 'strike', 'blockquote',
+                    {'color': []},
+                    {'background': []},
+                ],
+                ['code-block', 'link'],
+                ['clean'],
+            ]
+        }
+    }
+}
 
 
 # Static files (CSS, JavaScript, Images)
