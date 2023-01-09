@@ -1,5 +1,18 @@
 {% extends 'wrapper.html' %}
 {% load static %}
 {% block content %}
-
+<section>
+    <div class="container">
+        <div class="grid">
+            {% for topic in topics %}
+            <div class="topic">
+                <article>
+                    <h3>{{topic.title}}</h3>
+                    <p>{{topic.body|truncatewords:'25'}}</p>
+                </article>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 {% endblock %}
