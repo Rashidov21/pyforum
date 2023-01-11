@@ -4,12 +4,7 @@
 <!-- title  -->
 {% block title %}
 <title>
-    Profile -
-    {% if request.user.first_name %}
-    {{request.user.first_name}}
-    {% else %}
-    {{request.user.username}}
-    {% endif %}
+    Profile
 </title>
 {% endblock title %}
 <!-- end title  -->
@@ -17,23 +12,24 @@
     <article>
         <div class="grid">
             <div class="user-info">
-                <img src="{% if request.user.image %} {{request.user.image.url}} {% else %}https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp {% endif %}"
+                <img src="{% if user.image %} {{user.image.url}} {% else %}https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp {% endif %}"
                     alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                 <br>
                 <br>
-                <h5 class="my-3">{{request.user.get_full_name}}</h5>
+                <h5 class="my-3">{{user.get_full_name}}</h5>
                 <div class="grid">
-                    <a href="{{request.user.facebook_link}}" target="_blank">
+                    <a href="{{user.facebook_link}}" target="_blank">
                         <ion-icon name="logo-facebook" size="large"></ion-icon>
                     </a>
-                    <a href="{{request.user.instagram_link}}" target="_blank">
+                    <a href="{{user.instagram_link}}" target="_blank">
                         <ion-icon name="logo-instagram" size="large"></ion-icon>
                     </a>
-                    <a href="{{request.user.telegram_link}}" target="_blank">
+                    <a href="{{user.telegram_link}}" target="_blank">
                         <ion-icon name="paper-plane-outline" size="large"></ion-icon>
                     </a>
                 </div>
                 <br>
+                {% if request.user.username == user.username %}
                 <a href="{% url 'accounts:profile_edit' request.user.id %}" role="button">
 
                     Edit
@@ -41,16 +37,19 @@
                 <a href="{% url 'forum:add_topic' %}" role="button">
                     Add new topic
                 </a>
+                {% else %}
+                <h4>dsds</h4>
+                {% endif %}
 
             </div>
             <div class="main">
 
-                <h4>Username : {{request.user.username}}</h4>
-                <h4>First name : {{request.user.first_name}}</h4>
-                <h4>Last name : {{request.user.last_name}}</h4>
-                <h4>Email : {{request.user.email}}</h4>
-                <h4>Address : {{request.user.address}}</h4>
-                <p>{{request.user.bio}}</p>
+                <h4>Username : {{user.username}}</h4>
+                <h4>First name : {{user.first_name}}</h4>
+                <h4>Last name : {{user.last_name}}</h4>
+                <h4>Email : {{user.email}}</h4>
+                <h4>Address : {{user.address}}</h4>
+                <p>{{user.bio}}</p>
 
             </div>
         </div>

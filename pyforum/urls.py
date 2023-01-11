@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("forum.urls", namespace='forum')),
     path("accounts/", include("accounts.urls", namespace='accounts')),
+    path('__debug__/', include('debug_toolbar.urls')),
 ]
 
 if settings.DEBUG:

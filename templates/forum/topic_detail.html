@@ -1,0 +1,43 @@
+{% extends '../wrapper.html' %}
+{% load static %}
+{% block content %}
+{{form.media}}
+<!-- title  -->
+{% block title %}
+<title>
+    Topic - {{object.title}}
+</title>
+{% endblock title %}
+<br><br>
+<section>
+    <div class="container">
+        <div class="grid">
+            <article>
+                <p>
+                    <b>Category</b>:
+                    <a href="">{{object.category}}</a>
+                </p>
+                <p>
+                    <b>Tags</b>:
+                    {% for tag in object.tag.all %}
+                    <a href="{% url 'forum:tag_list' tag.slug %}">{{tag.name}}</a>
+                    {% endfor %}
+                </p>
+                <h3>{{object.title}}</h3>
+
+
+                <p>{{object.body.html|safe}}</p>
+                <p class="grid">
+                    <span>
+                        <ion-icon name="eye-outline"></ion-icon> {{topic.views}}
+                    </span>
+
+                    <span><ion-icon name="person-outline"></ion-icon>{{topic.author}}</span>
+                </p>
+                <a href="/" role="button">Back to topics</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

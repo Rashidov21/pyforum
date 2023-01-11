@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.contrib.auth import login, authenticate
 from django.views.generic import DetailView, TemplateView
@@ -14,6 +14,7 @@ from .forms import SimpleUserCreationForm
 
 
 class ProfileView(LoginRequiredMixin, TemplateView):
+
     template_name = 'registration/profile.html'
 
 
@@ -48,3 +49,12 @@ def register(request):
             return render(request, "registration/register.html", {"form": form})
 
     return render(request, "registration/register.html", {"form": form})
+
+
+def user_detail(request, username):
+    user = get_object_or_404(User, username=username)
+
+    context = {
+        "user": user
+    }
+    return render(request, "registration/profile.html", context=context)

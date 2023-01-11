@@ -3,9 +3,9 @@
 {% block content %}
 <section>
     <div class="container">
-        <div class="grid grid-col">
+        <div class="grid">
             {% for topic in object_list %}
-            <div class="col-6">
+            <div class="topics">
                 <div class="topic">
                     <a href="{% url 'forum:category_list' topic.category.slug %}">{{topic.category}}</a>
                     <br>
@@ -20,11 +20,7 @@
                             <ion-icon name="eye-outline"></ion-icon> {{topic.views}}
                         </span>
 
-                        <span>
-                            <a href="{% url 'accounts:user_profile' topic.author.username %}">
-                                <ion-icon name="person-outline"></ion-icon>{{topic.author}}
-                            </a>
-                        </span>
+                        <span><ion-icon name="person-outline"></ion-icon>{{topic.author}}</span>
                     </p>
 
                 </div>
